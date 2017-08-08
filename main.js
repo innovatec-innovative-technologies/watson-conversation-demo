@@ -14,5 +14,5 @@ console.log("Creating and starting the server");
 var KommuneBotServer = require('./server/dist/server').KommuneBotServer;
 var server = new KommuneBotServer();
 let clientFolderPath = process.cwd() + "/client";
-server.init(clientFolderPath);
+server.createServer(clientFolderPath);
 server.start();

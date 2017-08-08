@@ -10,34 +10,26 @@ import { ServerConfig } from "../config/config";
  * @class KommuneBotApplication
  */
 export class KommuneBotApplication {
-    publicFolderPath: string;
     expressApp: express.Application;
 
-    public init(publicFolderPath: string) {
-        this.publicFolderPath = publicFolderPath;
-        this.config(publicFolderPath);
-        this.routes();
-    }
 
-    private config(publicFolderPath: string) {
+    public config(pathToClient: string) {
+
+        console.log(ServerConfig.LOG_PREFIX, "Creating express application");
         this.expressApp = express();
         this.expressApp.use(bodyParser.urlencoded({ extended: false }));
         this.expressApp.use(bodyParser.json());
-        this.expressApp.use(express.static(publicFolderPath));
-    }
+        this.expressApp.use(express.static(pathToClient));
 
-    private routes() {
         console.log(ServerConfig.LOG_PREFIX, "Configuring routes");
         let kommuneBotRouter = new KommuneBotRouter();
         this.expressApp.use("/", kommuneBotRouter.getRouter());
-
-        console.log(ServerConfig.LOG_PREFIX, "Setup router to catch all other GET routes and return the index file thats built");
         this.expressApp.get("*", (req: express.Request, res: express.Response) => {
-            res.sendFile(this.publicFolderPath + '/index.html');
+            res.sendFile(pathToClient + '/index.html');
         });
     }
 
-    public getRequestListener(): express.Application {
+    public getExpressApplication(): express.Application {
         return this.expressApp;
     }
 }

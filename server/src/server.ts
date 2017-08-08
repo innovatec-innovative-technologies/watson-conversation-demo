@@ -10,15 +10,15 @@ export class KommuneBotServer {
 
     /**
      * 
-     * @param publicFolderPath folder in which the public files (client) is located
+     * @param pathToClientFiles folder in which the public files (client) is located
      */
-    public init(publicFolderPath: string) {
+    public createServer(pathToClientFiles: string) {
         console.log(ServerConfig.LOG_PREFIX, "Creating kommune bot server application");
         this.kommuneBotApp = new KommuneBotApplication();
-        this.kommuneBotApp.init(publicFolderPath);
+        this.kommuneBotApp.config(pathToClientFiles);
 
         console.log(ServerConfig.LOG_PREFIX, "Creating http server");
-        let requestListener: any = this.kommuneBotApp.getRequestListener();
+        let requestListener: any = this.kommuneBotApp.getExpressApplication();
         this.httpServer = http.createServer(requestListener);
 
         console.log(ServerConfig.LOG_PREFIX, "Add error handler");
