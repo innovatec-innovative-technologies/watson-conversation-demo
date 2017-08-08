@@ -1,0 +1,16 @@
+https://www.ibm.com/watson/developercloud/doc/discovery/adding-content.html
+
+
+How do I decide which document upload method to use? Use the...
+
+... API if you are integrating the upload of content with an existing application or creating your own custom upload mechanism.
+... Discovery tooling if you want to quickly upload locally accessible files.
+... Data Crawler if you want to have a managed upload of a significant number of files, or you want to extract content from a supported repository (such as a DB2 database).
+The maximum file size for individual documents in your collection is 50MB.
+
+Note: Remember! The sample documents are not automatically added to the collection. You must add them if you want them as part of your collection.
+
+Note: When creating a collection, you select the document language: English, Spanish, or German (English is the default). Your documents will be enriched in the selected language. Do not mix languages within the same collection.
+
+Note: When uploading documents using the Discovery tooling, all documents should have a unique file name. If two files have the same name, the original will be overwritten when the newer version is uploaded. If you would prefer that documents with the same file name coexist in your collection, the Document ID needs to be specified. You can specify the Document ID if you upload documents using the API or the Data Crawler.
+

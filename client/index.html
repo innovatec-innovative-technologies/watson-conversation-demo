@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Kommune bot</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <meta property="og:image" content="conversation.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+ 
+<body onload="userMessage('');">
+
+    <div class="container">
+        <div class="chatbot">
+            <div id="chatBox" class="dialogContainer"></div>
+            <input id="chatMessage" class="dialogInput" placeholder="Aa" onkeypress="return newEvent(event)"></input>
+        </div>
+        <!-- End class chatbot -->
+    </div>
+    <!-- End class container -->
+</body>
+<script src="dist/app.js"></script>
+
+</html>

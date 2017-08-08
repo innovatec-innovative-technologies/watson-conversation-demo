@@ -1,0 +1,15 @@
+declared-services:
+  kommune-bot-service:
+    label: conversation
+    plan:  free
+    
+applications:
+- name: kommune-bot
+  command: node ./server/dist/main.js 
+  path: .
+  memory: 512M
+  disk: 512M
+  instances: 1
+  domain: mybluemix.net 
+  services:
+  - kommune-bot-service 

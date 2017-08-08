@@ -1,0 +1,22 @@
+{
+    "name": "kommune_bot_client",
+    "version": "0.0.1",
+    "description": " ",
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "main": "src/main.ts",
+    "scripts": {
+        "build": "tsc",
+        "tsc": "tsc",
+        "watch": "tsc -w"
+    },
+    "dependencies": { 
+    },
+    "devDependencies": {
+        "colors": "^1.1.2",
+        "tslint": "^5.1.0",
+        "typings": "^2.1.1",
+        "typescript": "^2.3.4"
+    }
+}
