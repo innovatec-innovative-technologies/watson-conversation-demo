@@ -1,20 +1,30 @@
 {
-    "name": "kommune-bot",
-    "description": " ",
-    "version": "0.1.1",
-    "main": "main.js",
-    "scripts": {
-        "start": "node main.js",
-        "watch:server": "cd server && tsc --watch",
-        "watch:client": "cd client && tsc --watch",
-        "build": "npm run build:server && npm run build:client",
-        "build:server": "cd server && tsc",
-        "build:client": "cd client && tsc",
-        "install:server": "cd server && npm install",
-        "install:client": "cd client && npm install",
-        "install:full": "npm run install:server && npm run install:client && npm install"
-    },
-    "dependencies": {
-        "dotenv": "^4.0.0"
-    }
+  "name": "kommune-bot",
+  "description": " ",
+  "version": "0.1.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "watch:server": "cd server && tsc --watch",
+    "watch:client": "cd client && tsc --watch",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && tsc",
+    "build:client": "cd client && tsc",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:full": "npm run install:server && npm run install:client && npm install"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cfenv": "^1.0.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "watson-developer-cloud": "^2.37.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.1",
+    "run-sequence": "^2.1.0",
+    "typescript": "^2.4.2"
+  }
 }
