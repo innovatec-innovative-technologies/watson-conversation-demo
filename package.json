@@ -5,14 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node dist/main.js",
-    "watch:server": "cd server && tsc --watch",
-    "watch:client": "cd client && tsc --watch",
-    "build": "npm run build:server && npm run build:client",
-    "build:server": "cd server && tsc",
-    "build:client": "cd client && tsc",
-    "install:server": "cd server && npm install",
-    "install:client": "cd client && npm install",
-    "install:full": "npm run install:server && npm run install:client && npm install"
+    "build": "gulp",
+    "watch": "tsc --watch"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
@@ -22,7 +16,11 @@
     "watson-developer-cloud": "^2.37.0"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^3.2.3",
     "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-minify-html": "^1.0.6",
     "gulp-typescript": "^3.2.1",
     "run-sequence": "^2.1.0",
     "typescript": "^2.4.2"

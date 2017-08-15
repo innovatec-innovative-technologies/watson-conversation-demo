@@ -1,12 +1,10 @@
 {
     "compilerOptions": {
-        "outDir": "dist",
-        "baseUrl": "src",
+        "outDir": "./dist/",
         "sourceMap": true,
         "declaration": true,
         "noImplicitAny": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "moduleResolution": "node",
+        "suppressImplicitAnyIndexErrors": true, 
         "removeComments": true,
         "alwaysStrict": true,
         "module": "commonjs",
